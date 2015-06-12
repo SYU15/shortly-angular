@@ -11,8 +11,18 @@ angular.module('shortly.services', [])
       return resp.data;
     });
   };
+  var postLink = function(url){
+    return $http({
+      method:'POST',
+      url:'/api/links',
+      data: JSON.stringify(url)
+    }).then(function(resp){
+      console.log('Success posting link');
+    });
+  }
   return {
-    getLinks: getLinks
+    getLinks: getLinks,
+    postLink: postLink
   };
 })
 .factory('Auth', function ($http, $location, $window) {
