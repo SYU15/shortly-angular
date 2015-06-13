@@ -3,8 +3,9 @@
 <a href='#/links'> View Links</a>
   <h1>Submit Link</h1>
     <form name="linkForm" ng-submit='addLink()'>
-      <input type='text' name ='url' ng-model='link.url'>
+      <input type='url' name ='url' ng-model='link.url'>
       <button>Shorten</button>
+      <img ng-show='loading' src='../../assets/spiffygif_46x46.gif' class='spinner'>
     </form>
 
   <div ng-messages="linkForm.url.$error" style="color:maroon" role="alert">
