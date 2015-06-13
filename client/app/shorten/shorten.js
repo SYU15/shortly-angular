@@ -16,6 +16,8 @@ angular.module('shortly.shorten', [])
     $scope.loading=true;
     if(isValidUrl($scope.link.url)){
       $scope.bool=false;
+      $scope.link.userID = $window.localStorage.getItem('id');
+      console.log();
       Links.postLink($scope.link).then(function(){
         $scope.loading=false;
         $scope.link = '';

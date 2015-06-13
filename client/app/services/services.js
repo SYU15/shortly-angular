@@ -11,11 +11,11 @@ angular.module('shortly.services', [])
       return resp.data;
     });
   };
-  var postLink = function(url){
+  var postLink = function(link){
     return $http({
       method:'POST',
       url:'/api/links',
-      data: JSON.stringify(url)
+      data: link
     }).then(function(resp){
       console.log('Success posting link');
     });
@@ -40,7 +40,8 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
-      return resp.data.token;
+      // console.log('signin userToken: '+ resp.data.userToken);
+      return {token : resp.data.token, userToken : resp.data.userToken};
     });
   };
 
@@ -51,7 +52,8 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
-      return resp.data.token;
+      // console.log('signin userToken: '+ resp.data.userToken);
+      return {token : resp.data.token, userToken : resp.data.userToken};
     });
   };
 

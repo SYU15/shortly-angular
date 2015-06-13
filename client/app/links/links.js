@@ -3,7 +3,8 @@ angular.module('shortly.links', [])
 .controller('LinksController', function ($scope, $window, $location, Links) {
   // Your code here
   $scope.data = {};
-
+  $scope.search='';
+  $scope.userID = $window.localStorage.getItem('id')
   $scope.getLinks = function(){
     Links.getLinks().then(function(links){
       links.sort(function(a,b){

@@ -9,8 +9,9 @@
   </div>
   <h1>Search for link</h1>
   <input type="text" ng-model="search" placeholder="Enter title">
+  <!-- <input ng-model='search.userID' ng-text='{{userID}}'> -->
   <ul>
-    <li class='link' ng-repeat='link in data.links | filter:search' ng-click=''>
+    <li class='link' ng-repeat='link in data.links | filter:search:userID' ng-click=''>
       <ng-link></ng-link>
     </li>
   </ul>
