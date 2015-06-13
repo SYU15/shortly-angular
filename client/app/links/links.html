@@ -2,7 +2,7 @@
   <!-- Your html here -->
   <a href='#/shorten'> Shorten a Link</a>
   <ul>
-    <li ng-repeat='link in data'>  {{ link }}  </li>
+    <li ng-repeat='link in data.links' ng-click=''><h3>{{link.title}}</h3><a ng-href='/api/links/{{link.code}}'>{{link.base_url+'/'+link.code}}</a></li>
   </ul>
 
 </div>
