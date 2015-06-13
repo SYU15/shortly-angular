@@ -11,13 +11,14 @@
   <input type="text" ng-model="search" placeholder="Enter title">
   <ul>
     <li class='link' ng-repeat='link in data.links | filter:search' ng-click=''>
-      <div class='info'>
-        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
-        <div class='title'>{{link.title}}</div>
-        <div class='original'>{{link.url}}</div>
-        <a ng-href='{{link.base_url}}/api/links/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
-      </div>
+      <ng-link></ng-link>
     </li>
   </ul>
 
 </div>
+      <!-- <div class='info'>
+        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+        <div class='title'>{{link.title}}</div>
+        <div class='original'>{{link.url}}</div>
+        <a ng-href='{{link.base_url}}/api/links/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
+      </div> -->

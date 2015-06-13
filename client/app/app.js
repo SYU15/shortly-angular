@@ -66,4 +66,11 @@ angular.module('shortly', [
       $location.path('/signin');
     }
   });
+}).directive('ngLink',function(){
+  return {
+    restrict: 'E',
+    template: '<div class=\'info\'><div class=\'visits\'><span class=\'count\'>{{link.visits}}</span>Visits</div><div class=\'title\'>{{link.title}}</div><div class=\'original\'>{{link.url}}</div><a ng-href=\'{{link.base_url}}/api/links/{{link.code}}\'>{{link.base_url}}/{{link.code}}</a></div>'
+  };
 });
+
+

@@ -22,3 +22,5 @@ angular.module('shortly.links', [])
     $location.path('/signin');
   }
 });
+// angular.module('shortly')
+
