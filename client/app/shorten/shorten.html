@@ -1,6 +1,12 @@
 <div id='container' ng-controller='ShortenController'>
 <!-- Your code here -->
-<a href='#/links'> View Links</a>
+<div class='navigation'>
+    <ul>
+      <li><a href='#/links' class='index'>All Links</a></li>
+      <li><a href='#/shorten' class='create'>Shorten</a></li>
+      <li><a href='#/logout' class='logout'>Logout</a></li>
+    </ul>
+  </div>
   <h1>Submit Link</h1>
     <form name="linkForm" ng-submit='addLink()'>
       <input type='url' name ='url' ng-model='link.url'>

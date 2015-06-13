@@ -1,6 +1,13 @@
 <div id='container' ng-controller='LinksController'>
   <!-- Your html here -->
-  <a href='#/shorten'> Shorten a Link</a>
+  <div class='navigation'>
+    <ul>
+      <li><a href='#/links' class='index'>All Links</a></li>
+      <li><a href='#/shorten' class='create'>Shorten</a></li>
+      <li><a href='#/logout' class='logout'>Logout</a></li>
+    </ul>
+  </div>
+  <h1>Search for link</h1>
   <input type="text" ng-model="search" placeholder="Enter title">
   <ul>
     <li class='link' ng-repeat='link in data.links | filter:search' ng-click=''>

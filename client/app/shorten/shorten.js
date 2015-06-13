@@ -1,10 +1,13 @@
 angular.module('shortly.shorten', [])
 
-.controller('ShortenController', function ($scope, $location, Links) {
+.controller('ShortenController', function ($scope,$window, $location, Links) {
   // Your code here
   $scope.link={};
   $scope.bool=false;
   $scope.loading=false;
+  if($window.localStorage.getItem('com.shortly').length === 0){
+    $location.path('/signin');
+  }
   var isValidUrl = function(url) {
     return url.match(rValidUrl);
   };
@@ -26,5 +29,6 @@ angular.module('shortly.shorten', [])
       $scope.loading=false;
 
     }
-  }
+  };
+
 });

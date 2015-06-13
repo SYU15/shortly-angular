@@ -1,8 +1,9 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, $window, $location, Links) {
   // Your code here
   $scope.data = {};
+
   $scope.getLinks = function(){
     Links.getLinks().then(function(links){
       links.sort(function(a,b){
@@ -14,5 +15,10 @@ angular.module('shortly.links', [])
         console.error(error);
       });
   };
-  $scope.getLinks();
+  if($window.localStorage.getItem('com.shortly').length > 0){
+    $scope.getLinks();
+  }
+  else{
+    $location.path('/signin');
+  }
 });
